@@ -36,4 +36,5 @@ public class TrainerController {
     public void setTrainerService(TrainerService trainerService) {
         this.trainerService = trainerService;
     }
+
 }

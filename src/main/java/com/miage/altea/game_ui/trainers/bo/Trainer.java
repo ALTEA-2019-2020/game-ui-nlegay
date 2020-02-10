@@ -1,13 +1,11 @@
 package com.miage.altea.game_ui.trainers.bo;
 
-import com.miage.altea.game_ui.pokemonTypes.bo.PokemonType;
-
 import java.util.List;
 
 public class Trainer {
 
     private String name;
-    private List<PokemonType> team;
+    private List<Pokemon> team;
 
     public Trainer() {
     }
@@ -24,11 +22,11 @@ public class Trainer {
         this.name = name;
     }
 
-    public List<PokemonType> getTeam() {
+    public List<Pokemon> getTeam() {
         return team;
     }
 
-    public void setTeam(List<PokemonType> team) {
+    public void setTeam(List<Pokemon> team) {
         this.team = team;
     }
 

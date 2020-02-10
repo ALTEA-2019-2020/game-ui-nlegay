@@ -19,6 +19,11 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
         return List.of(result);
     }
 
+    public List<PokemonType> listPokemonsTypesB() {
+        var result = restTemplate.getForObject(pokemonServiceUrl+"pokemon-types/", PokemonType[].class);
+        return List.of(result);
+    }
+
     @Autowired
     void setRestTemplate(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;

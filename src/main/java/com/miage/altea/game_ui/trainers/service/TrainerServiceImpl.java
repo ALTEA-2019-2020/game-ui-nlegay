@@ -6,6 +6,7 @@ import com.miage.altea.game_ui.trainers.bo.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -19,6 +20,7 @@ public class TrainerServiceImpl implements TrainerService {
     private String trainerServiceUrl;
     private String pokemonServiceUrl;
 
+    @Cacheable("trainers")
     public List<Trainer> listTrainers() {
         var result = restTemplate.getForObject(trainerServiceUrl+"trainers/", Trainer[].class);
         return List.of(result);
